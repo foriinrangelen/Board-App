@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:latest  # PostgreSQL 최신 이미지
+    hostname: localhost  # 호스트 이름 설정
+    environment:
+      POSTGRES_USER: kyy  # PostgreSQL 사용자
+      POSTGRES_PASSWORD: kyy  # PostgreSQL 비밀번호
+      POSTGRES_DB: kyy  # 데이터베이스 이름
+    ports:
+      - "5432:5432"  # 호스트와 컨테이너의 포트 매핑
+    # volumes:
+    #   - pg_data:/var/lib/postgresql/data  # 데이터 지속성을 위한 볼륨
+    healthcheck:  # 데이터베이스가 준비되었는지 확인
+      test: ["CMD-SHELL", "pg_isready -U kyy"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  ui:
+    build: ./ui
+    ports:
+      - "5001:5173"  
+    depends_on:
+      - db  # 데이터베이스가 먼저 시작되어야 함
+
+  board:
+    build: ./board
+    ports:
+      - "3001:3001"  
+    depends_on:
+      - db  # 데이터베이스가 먼저 시작되어야 함
+
+# volumes:
+#   pg_data:  # 볼륨 정의

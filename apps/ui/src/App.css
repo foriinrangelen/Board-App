@@ -1,0 +1,366 @@
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+#root {
+  font-family: 'NanumSquare', sans-serif;
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+  height:100vh;
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 9rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.boxes {
+  
+  position: absolute;
+  display: flex;
+  /* gap: 0 20px; */
+  width: max-content;
+  animation: aniScroll 60s linear infinite;
+}
+
+.boxes.list2 {
+  animation: aniScroll-2 60s linear infinite;
+}
+
+.logo {
+  height: 5.5em; /* 이미지 높이 설정 */
+  /* padding: 1.5em; 이미지 주변 여백 */
+  margin-left:2rem;
+  
+}
+
+@keyframes aniScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes aniScroll-2 {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0%); }
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.logo.nest:hover {
+  filter: drop-shadow(0 0 2em #e0234e);
+}
+
+/* 반복되는 이미지를 위한 추가 스타일 */
+.logo-container .logo {
+  /* 이미지 간격 조정 */
+  margin-right: 2em; /* 이미지 간의 간격 설정 */
+}
+
+/* @keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+/* @media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+} */
+
+.card {
+  /* padding: 2em; */
+  /* border: 2px solid black; */
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+
+/* 추가 */
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  /* width: 360px; */
+  /* padding: 8% 0 0; */
+  /* margin: auto; */
+}
+.create-post-page {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+.create-form{
+  /* position: relative; */
+  /* z-index: 1; */
+  width:30%;
+  background: #FFFFFF;
+  /* max-width: 360px; */
+  /* margin: 0 auto 100px; */
+  padding: 45px;
+  text-align: center;
+}
+.create-post-content{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  resize: none; /* 크기 조절 비활성화 (원하는 경우) */
+  height:10rem;
+}
+.create-post-btn{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  /* background: #4CAF50; */
+  /* background: linear-gradient(45deg, #646cff, #61dafb, #e0234e); */
+  background: linear-gradient(45deg, #646cff, #61dafb);
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); */
+}
+
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.create-form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  /* background: #4CAF50; */
+  /* background: linear-gradient(45deg, #646cff, #61dafb, #e0234e); */
+  background: linear-gradient(45deg, #646cff, #61dafb);
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+
+/* body {
+  background: #76b852; 
+  background: rgb(141,194,111);
+  background: linear-gradient(90deg, rgba(141,194,111,1) 0%, rgba(118,184,82,1) 50%);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+} */
+
+/* navbar */
+.navbar {
+
+  display: flex;
+  align-items: center;
+  
+  background: #646cffaa;
+  /* background: rebeccapurple; */
+  color: white;
+  font-family: Helvetica;
+  font-weight: 300;
+  height:8vh;
+}
+
+.navbar__title {
+  margin-right: auto;
+  font-size: 150%;
+  padding: 12px 16px;
+  
+}
+
+.navbar__item {
+  padding: 16px 16px;
+  cursor: pointer;
+  vertical-align: middle;
+  font-size: 110%;
+  font-weight: 300;
+  text-decoration: inherit;
+  color:white;
+  
+}
+
+/* a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+} */
+ .login-text{
+  font-size: 1.7rem;
+  font-weight: 600;
+ }
+
+
+ /* 게시판 css*/
+ .post-list{
+  margin:auto;
+  /* border: 2px solid black; */
+  max-width: 70%;
+  /* border: 2px solid black; */
+
+ }
+
+ table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* thead {
+  background-color: #f2f2f2;
+} */
+
+th {
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  font-weight: 600;
+  color:#555;
+  text-align: center;
+  padding:1rem
+}
+.post-item {
+  border-bottom: 1px solid #ddd;
+  padding: 0.9rem;
+  /* text-align: left; */
+  width:10%;
+
+  
+}
+.post-title{
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+  width:40%
+}
+
+.post-item:hover {
+  background-color: #f1f1f1; /* 마우스 오버 시 배경색 변경 */
+  cursor: pointer;
+}
+.post-author{
+  display: flex;
+  width:100%;
+  margin-bottom:1rem;
+  /* background-color: red; */
+  justify-content: space-between;
+}
+.btn-wrap{
+  display: flex;
+  justify-content: end;
+}
+.btn-create{
+  
+  margin-top: 1rem;
+  padding: 10px 20px; /* 여백 */
+  border: none; /* 테두리 제거 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  font-size: 1rem; /* 글자 크기 */
+  cursor: pointer; /* 커서 변경 */
+  
+}
+.btn-create:hover{
+  background-color: #646cffaa;
+  color:white;
+}
+#btn-delete{
+  background-color: #e0234e;
+}
