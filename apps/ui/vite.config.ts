@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/': {
-        target: 'http://43.203.225.167:3001',
+        target: 'http://localhost:3001',
         changeOrigin: true,
       },
     },

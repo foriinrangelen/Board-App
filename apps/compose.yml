@@ -1,7 +1,7 @@
 services:
   db:
     image: postgres:latest  # PostgreSQL 최신 이미지
-    hostname: localhost  # 호스트 이름 설정
+    hostname: db  # 호스트 이름 설정
     environment:
       POSTGRES_USER: kyy  # PostgreSQL 사용자
       POSTGRES_PASSWORD: kyy  # PostgreSQL 비밀번호
@@ -16,19 +16,20 @@ services:
       timeout: 5s
       retries: 5
 
-  ui:
-    build: ./ui
-    ports:
-      - "5001:5173"  
-    depends_on:
-      - db  # 데이터베이스가 먼저 시작되어야 함
+  # ui:
+  #   build: ./ui
+  #   ports:
+  #     - "5001:5173"  
+  #   depends_on:
+  #     - db  # 데이터베이스가 먼저 시작되어야 함
 
-  board:
-    build: ./board
+  apps:
+    build: ./
     ports:
       - "3001:3001"  
     depends_on:
       - db  # 데이터베이스가 먼저 시작되어야 함
+    command: ["sh", "-c", "yarn migration:run && yarn start"]  # 마이그레이션 후 애플리케이션 시작
 
 # volumes:
 #   pg_data:  # 볼륨 정의

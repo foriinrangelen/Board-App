@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router-dom'
+
 
 const Join = () => {
+  
+  const navigate = useNavigate()
     const [userJoinId, setUserJoinId]= useState(null)
     const [userJoinPassword, setUserJoinPassword]= useState(null)
     const [userJoinName, setUserJoinName]= useState(null)
@@ -17,6 +21,7 @@ const Join = () => {
             password:userJoinPassword,
             name:userJoinName
           })
+          navigate('/')
           // console.log(data)
           // Cookies.set('accessToken', data.accessToken, { expires: 7 }); // 7일 동안 유효
           // console.log(Cookies.get('accessToken'),'accessTokenaccessTokenaccessToken')
