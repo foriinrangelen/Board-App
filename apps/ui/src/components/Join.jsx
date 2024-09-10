@@ -3,20 +3,23 @@ import axios from 'axios';
 import Cookies from 'js-cookie'
 
 const Join = () => {
-    const [userId, setUserId]= useState(null)
-    const [userPassword, setUserPassword]= useState(null)
-    const loginS= async(e)=>{
+    const [userJoinId, setUserJoinId]= useState(null)
+    const [userJoinPassword, setUserJoinPassword]= useState(null)
+    const [userJoinName, setUserJoinName]= useState(null)
+    const join= async(e)=>{
         e.preventDefault(); // 폼 제출 기본 동작 방지
         console.log("클릭")
-        console.log(userId)
-        console.log(userPassword)
-        const { data } = await axios.post('http://localhost:3001/login', {
-            userId,
-            password:userPassword
+        console.log(userJoinId)
+        console.log(userJoinPassword)
+        console.log(userJoinName)
+        const { data } = await axios.post('http://localhost:3001/user', {
+            userId:userJoinId,
+            password:userJoinPassword,
+            name:userJoinName
           })
-          console.log(data)
-          Cookies.set('accessToken', data.accessToken, { expires: 7 }); // 7일 동안 유효
-          console.log(Cookies.get('accessToken'),'accessTokenaccessTokenaccessToken')
+          // console.log(data)
+          // Cookies.set('accessToken', data.accessToken, { expires: 7 }); // 7일 동안 유효
+          // console.log(Cookies.get('accessToken'),'accessTokenaccessTokenaccessToken')
     }
 
   return (
@@ -28,12 +31,24 @@ const Join = () => {
 
     <form class="login-form">
     <h4 style={{ margin: '0px', float:"left" }}>아이디</h4>
-    <input type="text" style={{ marginTop: '0.4rem'}} placeholder="ID"/>
+    <input type="text"
+             placeholder="ID"
+             value={userJoinId}
+             onChange={(e) => setUserJoinId(e.target.value)}
+             style={{ marginTop: '0.4rem'}} />
     <h4 style={{ margin: '0px', float:"left" }}>비밀번호</h4>
-      <input type="password" style={{ marginTop: '0.4rem'}} placeholder="password"/>
+    <input type="password"
+             placeholder="password"
+             value={userJoinPassword}
+             onChange={(e) => setUserJoinPassword(e.target.value)}
+             style={{ marginTop: '0.4rem'}}/>
       <h4 style={{ margin: '0px', float:"left" }}>이름</h4>
-      <input type="text" style={{ marginTop: '0.4rem'}} placeholder="name"/>
-      <button>create</button>
+      <input type="text"
+             placeholder="name"
+             value={userJoinName}
+             onChange={(e) => setUserJoinName(e.target.value)}
+             style={{ marginTop: '0.4rem'}} />
+      <button onClick={(e)=>join(e)}>create</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
     </form>
   </div>

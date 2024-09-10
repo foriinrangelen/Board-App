@@ -6,7 +6,7 @@ import { HttpExceptionFilter } from './exceptions/http.exceptions';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   // app.setGlobalPrefix('/'); : back단으로 들어오는 모든것들에 /를 붙여주겠다
-    app.setGlobalPrefix('/');
+    // app.setGlobalPrefix('/');
     // CORS 활성화
     app.enableCors({
       origin: '*', // 모든 출처 허용, 특정 출처로 제한할 수 있음
