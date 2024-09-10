@@ -12,7 +12,7 @@ const Join = () => {
         console.log(userJoinId)
         console.log(userJoinPassword)
         console.log(userJoinName)
-        const { data } = await axios.post('http://localhost:3001/user', {
+        const { data } = await axios.post('/user', {
             userId:userJoinId,
             password:userJoinPassword,
             name:userJoinName

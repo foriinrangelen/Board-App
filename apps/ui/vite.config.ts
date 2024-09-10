@@ -5,12 +5,12 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   // 프록시 설정 , '/로 시작하는 모든 애들은 'http://localhost:3001'로 간다'
-  // server: {
-  //   proxy: {
-  //     '/': {
-  //       target: 'http://localhost:3001',
-  //       changeOrigin: true,
-  //     },
-  //   },
-  // }
+  server: {
+    proxy: {
+      '/': {
+        target: 'http://43.203.225.167:3001',
+        changeOrigin: true,
+      },
+    },
+  }
 })

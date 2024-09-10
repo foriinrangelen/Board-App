@@ -7,7 +7,7 @@ const Posts = () => {
   // 전체 데이터 요청하는 함수
   const getPostAll = async () => {
     try {
-      let { data } = await axios('http://localhost:3001/board', {
+      let { data } = await axios('/board', {
         // headers: {
         //   'Access-Control-Allow-Origin': '*', // 모든 출처 허용
         //   // 추가 필요한 헤더가 있다면 여기에 설정

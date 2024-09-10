@@ -23,7 +23,7 @@ async function bootstrap() {
   .addTag('Board')
   .build();
 const document = SwaggerModule.createDocument(app, config);
-SwaggerModule.setup('api', app, document);
+SwaggerModule.setup('api1', app, document);
 
   await app.listen(3001);
 }
