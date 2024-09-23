@@ -1,4 +1,4 @@
-### React+ NestJS+ PostgresDB simple-board 
+### React+ NestJS+ PostgreSQL simple-board 
 
 ### 사용기술
 
