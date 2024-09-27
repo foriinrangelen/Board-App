@@ -1,4 +1,4 @@
-### React+ NestJS+ PostgreSQL simple-board 
+### 인증,인가기능이 구현된 간단한 게시판 프로젝트
 
 ### 사용기술
 
