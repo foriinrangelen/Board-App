@@ -1,5 +1,5 @@
 # 1. 특정 Node.js 버전을 기반으로 설정
-FROM node:latest
+FROM node:20.16.0
 
 # 2. 작업 디렉토리 설정
 WORKDIR /apps/ui
@@ -23,7 +23,6 @@ WORKDIR /apps/board
 
 COPY ./board/package*.json ./board/yarn.lock ./
 
-
 # 4. 의존성 설치
 RUN yarn install
 
@@ -38,5 +37,5 @@ COPY ./board/ .
 # EXPOSE 3001
 
 # 8. 애플리케이션 실행
-# CMD ["yarn", "dev"]
+CMD ["yarn", "dev"]
 

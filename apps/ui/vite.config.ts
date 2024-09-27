@@ -7,7 +7,7 @@ export default defineConfig({
   // 프록시 설정 , '/로 시작하는 모든 애들은 'http://localhost:3001'로 간다'
   server: {
     proxy: {
-      '/': {
+      '/api': {
         target: 'http://localhost:3001',
         changeOrigin: true,
       },

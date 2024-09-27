@@ -28,12 +28,12 @@ import { join } from 'path'
       synchronize: false, // 엔터티가 테이블의 정의를 가지고있는데 엔터티가 변할때 이 변환값을 실제 DB에 반영할건지,(false 추천)
       logging: true, // 데이터베이스 query를 확인가능
     }),
-    ServeStaticModule.forRoot(
-      {
-        rootPath: join(__dirname, '..', '..','ui','dist'), // 빌드된 파일이 위치한 경로
-        serveRoot: '/', // 기본 경로
-      },
-    ),
+    // ServeStaticModule.forRoot(
+    //   {
+    //     rootPath: join(__dirname, '..', '..','ui','dist'), // 빌드된 파일이 위치한 경로
+    //     serveRoot: '/', // 기본 경로
+    //   },
+    // ),
    
     BoardModule,
     UserModule,
