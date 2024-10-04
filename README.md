@@ -11,7 +11,7 @@ Board-App
  └─ frontend
 ```
 
-### 사용기술
+### 사용스택
 [![My Skills](https://skillicons.dev/icons?i=ts,react,nodejs,nestjs,postgres,docker,git,github,aws&theme=light)](https://skillicons.dev)
 [![My Skills](https://skillicons.dev/icons?i=ts)](https://skillicons.dev) <br/>**5.5.4v**
 
