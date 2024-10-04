@@ -4,7 +4,7 @@
 NestJS와 React를 이해하고, 라이브러리 사용에 익숙해지고자 진행하였고, 회원가입과 로그인을 통해서 인증,인가 기능을 구현한 게시판입니다
 ### 프로젝트 구조
 ```
-apps
+Board-App
  ├─ Dockerfile
  ├─ compose.yml
  ├─ backend
