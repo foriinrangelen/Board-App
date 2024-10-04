@@ -21,10 +21,29 @@ export class BoardService
     ){}
 
     // 전체 테이블 가져오는 메서드: find()
-    async findAll(){
-        const findAllBoards= await this.boardRepository.find();
-        // console.log(this.boardRepository.find())
-        return findAllBoards
+    // async findAll(){
+    //     const findAllBoards= await this.boardRepository.find();
+    //     // console.log(this.boardRepository.find())
+    //     return findAllBoards
+    // }
+    async findAll(page: number = 1) {
+        const limit=8; // 8개만 가져오기
+        // 유효한 페이지 번호 확인
+        if (page < 1) page = 1;
+        const [findAllBoards, total] = await this.boardRepository.findAndCount({
+            skip: (page - 1) * limit, // 페이지에 따라 건너뛸 수
+            take: limit,              // 가져올 개수
+            order: {
+                updateAt: 'DESC',     // 최신순으로 정렬
+            },
+        });
+    
+        return {
+            boards: findAllBoards,
+            total,                    // 전체 게시물 수
+            totalPages: Math.ceil(total / limit), // 전체 페이지 수
+            currentPage: page,        // 현재 페이지
+        };
     }
     // 특정 게시물 하나 가져오기 : findOneBy()
     // findOneBy()는 기본적으로 where절을 포함

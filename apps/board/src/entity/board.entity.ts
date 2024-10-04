@@ -28,6 +28,12 @@ export class Board {
     @CreateDateColumn()
     createAt: Date;
 
+    @Column()
+    createAt: string; // 문자열로 저장
+
+
+    // 이런식으로생성자로 초기화해서 변경해서 저장도 가능
+
     @ApiProperty ({description: "유저 정보",} )
     @ManyToOne(() => User)
     @JoinColumn({ name: "userId" }) // 실제 table의 column과 엔터티 column간 이름이 다르다면 @JoinColumn({ name: "user_id" })처럼 맞게 설정해줘야함(join위해)

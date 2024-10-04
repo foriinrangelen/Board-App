@@ -1,6 +1,6 @@
 import { ApiTags } from '@nestjs/swagger';
 import { BoardService } from './board.service';
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, Request, UnauthorizedException, UseGuards, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, Query, Request, UnauthorizedException, UseGuards, ValidationPipe } from '@nestjs/common';
 import { CreateBoardDto } from './dto/create-board.dto';
 import { UpdateBoardDto } from './dto/update-board.dto';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
@@ -19,8 +19,10 @@ export class BoardController {
 
 
     @Get()
-    findAll(){
-        return this.boardService.findAll();
+
+    findAll(@Query('page') page: number=1){
+        console.log(page)
+        return this.boardService.findAll(page);
     }
 
 
