@@ -16,7 +16,7 @@ const Createboard = () => {
         e.preventDefault(); // 폼 제출 기본 동작 방지
         console.log(postTitle, postContent);
         try{
-            const { data }= await axios.post('/board',{
+            const { data }= await axios.post('/api/board',{
                 title:postTitle,
                 contents:postContent,
                 // Bearer 무조건 추가 0906 ✅ 

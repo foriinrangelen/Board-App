@@ -32,7 +32,6 @@ export class BoardController {
         return this.boardService.find(boardNo);
     }
 
-
     // 게시물 생성
     @Post()
     // 게시물 생성할때, jwt 토큰이 유효한지 확인

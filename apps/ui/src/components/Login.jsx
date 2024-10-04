@@ -15,7 +15,7 @@ const Login = () => {
         console.log("클릭")
         console.log(userId)
         console.log(userPassword)
-        const { data } = await axios.post('/login', {
+        const { data } = await axios.post('/api/login', {
             userId,
             password:userPassword
           })

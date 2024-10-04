@@ -5,14 +5,14 @@ import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
 const Home = () => {
 
-  const navigate1 = useNavigate();
+  const navigate = useNavigate();
 
   const [posts, setPosts] = useState([]);
   const { isLogin, setIsLogin } = useContext(LoginContext);
   // 전체 데이터 요청하는 함수
   const getPostAll = async () => {
     try {
-      let { data } = await axios('/board', {
+      let { data } = await axios('/api/board', {
         // headers: {
         //   'Access-Control-Allow-Origin': '*', // 모든 출처 허용
         //   // 추가 필요한 헤더가 있다면 여기에 설정
@@ -27,6 +27,7 @@ const Home = () => {
       //   arr[i].createAt= temp
       //   return arr
       // })
+      
 
       // 2. 일반적인 방식
       const removedAt = data.map(item => {
@@ -54,7 +55,7 @@ const Home = () => {
 const postClick= async(e)=>{
   console.log(e.target.parentElement.firstElementChild.innerText)
   const boardNo= e.target.parentElement.firstElementChild.innerText;
-  navigate1(`/board/${boardNo}`)
+  navigate(`/board/${boardNo}`)
 
 }
 

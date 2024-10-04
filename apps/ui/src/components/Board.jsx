@@ -16,7 +16,7 @@ const Board = () => {
 
     const getPost= async()=>{
       try{
-        const { data }= await axios.get(`/board/${boardNo}`,
+        const { data }= await axios.get(`/api/board/${boardNo}`,
           {headers: {'Authorization': `Bearer ${Cookies.get('accessToken')}`}}
         )
         console.log(data)
@@ -32,7 +32,6 @@ const Board = () => {
     }
     useEffect(()=>{
       getPost()
-
     },[])
 
     useEffect(() => {
@@ -49,7 +48,7 @@ const Board = () => {
   const deletePost= async(e)=>{
 
     e.preventDefault(); // 폼 제출 기본 동작 방지
-    const { data }= await axios.delete(`/board/${boardNo}`,{
+    const { data }= await axios.delete(`/api/board/${boardNo}`,{
                                       headers: {'Authorization': `Bearer ${Cookies.get('accessToken')}`}},)
 
     console.log(data)
@@ -62,7 +61,7 @@ const Board = () => {
     console.log(updatedContents)
     
     try{
-      const { data }= await axios.put(`/board/${boardNo}`,{
+      const { data }= await axios.put(`/api/board/${boardNo}`,{
         title:updatedTitle,
         contents:updatedContents,
       },{headers: {'Authorization': `Bearer ${Cookies.get('accessToken')}`}},)
