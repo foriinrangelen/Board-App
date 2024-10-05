@@ -1,6 +1,7 @@
 ## 인증,인가 게시판
 ```
-git clone 
+git clone https://github.com/foriinrangelen/Board-App.git
+cd Board-App
 docker-compose up
 ```
 ### 프로젝트 설명
