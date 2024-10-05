@@ -66,9 +66,9 @@ const postClick= async(e)=>{
 
 }
 
-const paging = (newPage) => {
-  console.log(newPage.target.innerText);
-  setPage(newPage.target.innerText); // 새로운 페이지 번호로 설정
+const paging = (event, newPage) => {
+  console.log(newPage,"페이지")
+  setPage(newPage); // 페이지 번호를 설정
 };
 
 
@@ -102,7 +102,7 @@ const paging = (newPage) => {
 <div className='btn-wrap' style={{ display: 'flex', justifyContent: 'space-between'}}>
   <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
     <Stack spacing={2} alignItems="center" mt={2}>
-      <Pagination count={totalPages} onChange={(e) => paging(e)} variant="outlined" shape="rounded" />
+      <Pagination count={totalPages} page={page} onChange={paging} variant="outlined" shape="rounded" />
     </Stack>
   </div>
   {isLogin && (
