@@ -11,7 +11,7 @@ async function bootstrap() {
     app.setGlobalPrefix('api');
 
     // 모든 요청을 React 앱으로 라우팅
-    app.useStaticAssets(join(__dirname, '..','..', 'ui/dist')); // 리액트 빌드 경로
+    app.useStaticAssets(join(__dirname, '..','..', 'frontend/dist')); // 리액트 빌드 경로
   // API 요청이 아닌 모든 요청을 React 앱으로 라우팅
   // app.use('*', (req, res, next) => {
   //   if (!req.url.startsWith('/api')) {

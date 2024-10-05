@@ -28,8 +28,8 @@ export class Board {
     @CreateDateColumn()
     createAt: Date;
 
-    @Column()
-    createAt: string; // 문자열로 저장
+    // @Column()
+    // createAt: string; // 문자열로 저장
 
 
     // 이런식으로생성자로 초기화해서 변경해서 저장도 가능
