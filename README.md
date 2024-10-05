@@ -14,13 +14,16 @@ Board-App
  ├─ backend
  └─ frontend
 ```
-
 ### 사용스택
-[![My Skills](https://skillicons.dev/icons?i=ts,react,nodejs,nestjs,postgres,vite,typeorm,docker,git,github,aws&theme=light)](https://skillicons.dev)
-<br/>**5.5.4v**&nbsp;&nbsp;**18.3.1v**&nbsp;&nbsp;**20.16.0v**&nbsp;**10.1.8v**&nbsp;&nbsp;&nbsp;**16.3v**&nbsp;&nbsp;&nbsp;&nbsp;**5.4.3v**
+[![My Skills](https://skillicons.dev/icons?i=ts,react,nodejs,nestjs,postgres,vite&theme=light)](https://skillicons.dev)
+![제목을-입력해주세요_-001 (15)](https://github.com/user-attachments/assets/89c61d2f-6460-4792-8013-4eecb7cd15cd)
+[![My Skills](https://skillicons.dev/icons?i=docker,git,github,aws&theme=light)](https://skillicons.dev)
+<br/>**5.5.4v**&nbsp;&nbsp;**18.3.1v**&nbsp;&nbsp;**20.16.0v**&nbsp;**10.1.8v**&nbsp;&nbsp;&nbsp;**16.3v**&nbsp;&nbsp;&nbsp;&nbsp;**5.4.3v**&nbsp;&nbsp;**0.3.20v**
 
 ### ERD
+
 ### 흐름도
+
 ### trouble
 1. 요청 url과 엔드포인트에서 받는 url 이 달라 새로고침 및 뒤로가기 시 404 에러 발생 문제
 2. 인증 및 인가를 위한 token 활용방식
