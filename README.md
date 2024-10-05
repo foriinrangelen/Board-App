@@ -16,13 +16,13 @@ Board-App
 ```
 
 ### 사용스택
-[![My Skills](https://skillicons.dev/icons?i=ts,react,nodejs,nestjs,postgres,docker,git,github,aws&theme=light)](https://skillicons.dev)
-[![My Skills](https://skillicons.dev/icons?i=ts)](https://skillicons.dev) <br/>**5.5.4v**
+[![My Skills](https://skillicons.dev/icons?i=ts,react,nodejs,nestjs,postgres,vite,typeorm,docker,git,github,aws&theme=light)](https://skillicons.dev)
+<br/>**5.5.4v**&nbsp;&nbsp;**18.3.1v**&nbsp;&nbsp;**20.16.0v**&nbsp;**10.1.8v**&nbsp;&nbsp;&nbsp;**16.3v**&nbsp;&nbsp;&nbsp;&nbsp;**5.4.3v**
 
 ### ERD
 ### 흐름도
 ### trouble
-1. axios 요청 url과 엔드포인트에서 받는 url 이 달라 새로고침 및 뒤로가기 시 404 에러 발생 문제
+1. 요청 url과 엔드포인트에서 받는 url 이 달라 새로고침 및 뒤로가기 시 404 에러 발생 문제
 2. 인증 및 인가를 위한 token 활용방식
 3. typeorm의 migration시 타입이 다르게 설정되고 pk관계 mapping이 제대로 되지않음
    
