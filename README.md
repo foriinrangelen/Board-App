@@ -28,4 +28,7 @@ Board-App
 1. 요청 url과 엔드포인트에서 받는 url 이 달라 새로고침 및 뒤로가기 시 404 에러 발생 문제
 2. 인증 및 인가를 위한 token 활용방식
 3. typeorm의 migration시 타입이 다르게 설정되고 pk관계 mapping이 제대로 되지않음
-   
+
+### ing~
+1. 댓글, 대댓글 기능 추가
+2. admin 추가
