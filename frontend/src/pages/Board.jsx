@@ -82,27 +82,24 @@ const Board = () => {
     <div>
       <span className="login-text">게시물</span>
       
-      <div className="create-post-page">
-        <div className="create-form">
-          <form className="login-form">
-              <div className='post-author'>
-              <h4 style={{ margin: '0px', float:"left" }}>{findPost?.userId}</h4><span>{findPost?.createAt.split('T')[0]}</span>
+          <form>
+          <div className='post-author'>
+              <h4 className='m-0'>{findPost?.userId}</h4>
+              <span>{findPost?.createAt.split('T')[0]}</span>
               </div>
-            
-         
-
-             <h4 style={{ margin: '0px', float:"left" }}>제목</h4>
+  
              <input type="text"
                     readOnly={!updatePostCheck}
                      value={updatedTitle}
                      onChange={(e) => setUpdatedTitle(e.target.value)} // 입력값 변경 시 상태 업데이트
-                     style={{ marginTop: '0.4rem', border:"1px solid #f2f2f2", backgroundColor: !updatePostCheck?'white':'#f2f2f2'}} />
+                     className="fw-bold m-0 create-form-input mb-3"
+                     style={{backgroundColor: !updatePostCheck?'white':'#f2f2f2'}} />
 
-             <h4 style={{ margin: '0px', float:"left" }}>내용 </h4>
+             
              <textarea className='create-post-content'
                         readOnly={!updatePostCheck} // updatePost가 true일 때 readOnly 적용
                         onChange={(e) => setUpdatedContents(e.target.value)} // 입력값 변경 시 상태 업데이트
-                        style={{ marginTop: '0.4rem', border:"1px solid #f2f2f2", backgroundColor: !updatePostCheck?'white':'#f2f2f2'}}
+                        style={{ backgroundColor: !updatePostCheck?'white':'#f2f2f2'}}
                         value={updatedContents}
                         
                         />
@@ -124,8 +121,8 @@ const Board = () => {
 
   </div>
   
-</div>
-      </div>
+
+      
 
   )
 }

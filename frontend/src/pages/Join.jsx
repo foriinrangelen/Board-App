@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import Cookies from 'js-cookie'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const Join = () => {
@@ -30,11 +30,7 @@ const Join = () => {
   return (
     <div>
       <span className="login-text">회원가입</span>
-    <div className="card">
-<div class="login-page">
-  <div class="form">
-
-    <form class="login-form">
+    <form class="form">
     <h4 style={{ margin: '0px', float:"left" }}>아이디</h4>
     <input type="text"
              placeholder="ID"
@@ -54,16 +50,13 @@ const Join = () => {
              onChange={(e) => setUserJoinName(e.target.value)}
              style={{ marginTop: '0.4rem'}} />
       <button onClick={(e)=>join(e)}>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
+      
+      <p className="message">Already registered? <Link to={'/login'}>Create an account</Link></p>
     </form>
   </div>
-</div>
 
-        {/* <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p> */}
-      </div>
-    </div>
+
+
   )
 }
 

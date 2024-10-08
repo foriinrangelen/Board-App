@@ -33,18 +33,14 @@ const Createboard = () => {
   return (
     <div>
       <span className="login-text">게시물 작성</span>
-      
-      <div className="create-post-page">
-        <div className="create-form">
-          <form className="login-form">
-             <h4 style={{ margin: '0px', float:"left" }}>제목</h4>
+          <form>
              <input type="text"
                     placeholder="글 제목을 입력하세요"
                      value={postTitle}
                      onChange={(e) => setPostTitle(e.target.value)}
+                     className="fw-bold m-0 create-form-input mb-3"
                      style={{ marginTop: '0.4rem'}} />
 
-             <h4 style={{ margin: '0px', float:"left" }}>내용 </h4>
              <textarea className='create-post-content'
                         placeholder="내용을 입력하세요"
                         style={{ marginTop: '0.4rem'}}
@@ -54,8 +50,7 @@ const Createboard = () => {
         <button className='create-post-btn' onClick={createPost}>등록하기</button>
             </form>
   </div>
-</div>
-      </div>
+
 
   )
 }

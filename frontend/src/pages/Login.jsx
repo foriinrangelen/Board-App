@@ -2,7 +2,8 @@ import React, { useState, useContext } from 'react'
 import axios from 'axios';
 import Cookies from 'js-cookie'
 import { LoginContext } from '../context/LoginContext';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { Col } from 'react-bootstrap';
 
 const Login = () => {
 
@@ -20,8 +21,10 @@ const Login = () => {
             password:userPassword
           })
           console.log(data)
-          Cookies.set('accessToken', data.accessToken, { expires: 7 }); // 7일 동안 유효
-          Cookies.set('userId', data.payload.userId, { expires: 7 }); // 7일 동안 유효
+          // Cookies.set('accessToken', data.accessToken, { expires: 7 }); // 7일 동안 유효
+          // Cookies.set('userId', data.payload.userId, { expires: 7 }); // 7일 동안 유효
+          Cookies.set('accessToken', data.accessToken); // 7일 동안 유효
+          Cookies.set('userId', data.payload.userId); // 7일 동안 유효
           setIsLogin(true); // 로그인 상태 true로 설정
           navigate('/')
           console.log(Cookies.get('accessToken'),'accessTokenaccessTokenaccessToken')
@@ -30,17 +33,9 @@ const Login = () => {
   return (
     <div>
         <span className="login-text">로그인</span>
-    <div className="card">
-    <div className="login-page">
-  <div className="form">
-    {/* <form className="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p className="message">Already registered? <a href="#">Sign In</a></p>
-    </form> */}
-    <form className="login-form">
+    
+  
+    <form className="form">
     <h4 style={{ margin: '0px', float:"left" }}>아이디</h4>
       <input type="text"
              placeholder="ID"
@@ -55,16 +50,13 @@ const Login = () => {
              onChange={(e) => setUserPassword(e.target.value)}
              style={{ marginTop: '0.4rem'}}/>
       <button onClick={loginS}>로그인</button>
-      <p className="message">Not registered? <a href="#">Create an account</a></p>
+      <p className="message">Not registered? <Link to={'/join'}>Create an account</Link></p>
     </form>
-  </div>
+
 </div>
 
-        {/* <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p> */}
-      </div>
-    </div>
+      
+    
   )
 }
 

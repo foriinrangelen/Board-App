@@ -4,6 +4,7 @@ import { LoginContext } from '../context/LoginContext';
 import { useNavigate } from 'react-router-dom'
 import { Pagination, Stack } from '@mui/material';
 import Cookies from 'js-cookie'
+import { Row,Col } from 'react-bootstrap';
 const Home = () => {
 
   const navigate = useNavigate();
@@ -73,12 +74,12 @@ const paging = (event, newPage) => {
 
 
   return (
-    <div className='board-body'>
-      <h1 className="login-text">게시판</h1>
-      <div className="post-list">
-      <table>
+    <>
+      <p className="login-text text-center">게시판</p>
+  
+      <table className='table-height'>
   <thead>
-    <tr className='post-text'>
+    <tr className='text-center fw-bold'>
       <th>번호</th>
       <th>제목</th>
       <th>등록일</th>
@@ -86,10 +87,10 @@ const paging = (event, newPage) => {
       <th>조회수</th>
     </tr>
   </thead>
-  <tbody className="table-list">
+  <tbody className="text-center">
     {posts.map((post, i) => ( 
       <tr key={i} className="post-item" onClick={(e)=>postClick(e)}>
-        <td className="post-item">{post.boardNo}</td>
+        <td className="post-item fw-bold">{post.boardNo}</td>
         <td className="post-title">{post.title}</td>
         <td className="post-item">{post.createAt}</td>
         <td className="post-item">{post.userId}</td>
@@ -111,11 +112,10 @@ const paging = (event, newPage) => {
 </div>
 
 
-      </div>
+      
 
 
-    </div>
-    
+      </>
   )
 }
 
